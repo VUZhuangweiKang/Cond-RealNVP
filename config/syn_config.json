@@ -1,0 +1,37 @@
+[
+    {
+        "spat_frac": 0.5,
+        "subseq_frac": 0.5,
+        "magnitude": 1.0,
+        "slice_frac": 0.05,
+        "types": [1, 2]
+    },
+    {
+        "spat_frac": 0.5,
+        "subseq_frac": 0.5,
+        "magnitude": 1.0,
+        "slice_frac": 0.03,
+        "types": [1, 2]
+    },
+    {
+        "spat_frac": 0.5,
+        "subseq_frac": 0.5,
+        "magnitude": 1.0,
+        "slice_frac": 0.01,
+        "types": [1, 2]
+    },
+    {
+        "spat_frac": 1.0,
+        "subseq_frac": 0.5,
+        "magnitude": 1.0,
+        "slice_frac": 0.05,
+        "types": [1, 2]
+    },
+    {
+        "spat_frac": 0.25,
+        "subseq_frac": 0.5,
+        "magnitude": 1.0,
+        "slice_frac": 0.05,
+        "types": [1, 2]
+    }
+]

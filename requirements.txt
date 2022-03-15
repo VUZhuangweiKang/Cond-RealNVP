@@ -1,0 +1,11 @@
+sklearn
+numpy
+pandas
+dask
+scipy
+geopandas
+shapely
+plotly
+matplotlib
+tensorflow==2.4.0
+tensorflow_probability==0.11.0

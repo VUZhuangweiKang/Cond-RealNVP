@@ -1,0 +1,58 @@
+[
+    {
+        "cid": -1,
+        "num_blocks": 10,
+        "encoder_units": [64, 32],
+        "decoder_units": [32, 64],
+        "st_units": [32, 32]
+    },
+    {
+        "cid": 0,
+        "num_blocks": 10,
+        "encoder_units": [128, 64],
+        "decoder_units": [64, 128],
+        "st_units": [128, 128]
+    },
+    {
+        "cid": 1,
+        "num_blocks": 10,
+        "encoder_units": [128, 128],
+        "decoder_units": [128, 128],
+        "st_units": [128, 128]
+    },
+    {
+        "cid": 2,
+        "num_blocks": 10,
+        "encoder_units": [128, 64],
+        "decoder_units": [64, 128],
+        "st_units": [128, 128]
+    },
+    {
+        "cid": 3,
+        "num_blocks": 10,
+        "encoder_units": [128, 64],
+        "decoder_units": [64, 128],
+        "st_units": [128, 128]
+    },
+    {
+        "cid": 5,
+        "num_blocks": 10,
+        "encoder_units": [64, 32],
+        "decoder_units": [32, 64],
+        "st_units": [32, 32]
+    },
+    {
+        "cid": 6,
+        "num_blocks": 10,
+        "encoder_units": [64, 32],
+        "decoder_units": [32, 64],
+        "st_units": [32, 32]
+    },
+    {
+        "cid": 7,
+        "num_blocks": 10,
+        "encoder_units": [128, 64],
+        "decoder_units": [64, 128],
+        "st_units": [128, 128]
+    }
+]
