@@ -2,8 +2,6 @@ import sys
 sys.path.insert(0, '../')
 sys.path.insert(1, '../../')
 import tensorflow as tf
-import plotly.graph_objects as go
-import matplotlib.pyplot as plt
 from load_data import *
 from utils import *
 from tods.sk_interface.detection_algorithm.DeepLog_skinterface import DeepLogSKI

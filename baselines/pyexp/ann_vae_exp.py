@@ -3,9 +3,7 @@ sys.path.insert(0, '../')
 sys.path.insert(1, '../../')
 import tensorflow as tf
 from tensorflow.keras.callbacks import ModelCheckpoint
-import plotly.graph_objects as go
 import tensorflow_probability as tfp
-import matplotlib.pyplot as plt
 from load_data import *
 from utils import *
 from ann_vae import *

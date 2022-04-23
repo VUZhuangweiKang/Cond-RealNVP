@@ -1,15 +1,9 @@
-import os, sys
+import sys
 sys.path.insert(1, '../')
-import numpy as np
-import pandas as pd
 import tensorflow as tf
 import tensorflow.keras as tfk
 from tensorflow import keras
 from tensorflow.keras import layers, Model
-from tensorflow.keras import backend as K
-from load_data import batch_data, get_validation_data
-from utils import dict_to_str
-from sklearn.metrics import r2_score, mean_squared_error
 from utils import *
 
 

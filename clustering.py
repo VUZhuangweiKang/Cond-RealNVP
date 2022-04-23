@@ -9,7 +9,6 @@ import numpy as np
 import dask.dataframe as dd
 import glob
 from scipy.spatial import distance
-from sklearn.cluster import OPTICS, KMeans
 from k_means_constrained import KMeansConstrained
 from sklearn.metrics import silhouette_score
 from sktime.distances.elastic_cython import dtw_distance

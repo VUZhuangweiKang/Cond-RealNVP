@@ -2,20 +2,15 @@
 cite: https://github.com/paya54/Anomaly_Detect_LSTM_VAE
 """
 
-import os, sys
+import sys
 sys.path.insert(1, '../')
-import numpy as np
-import pandas as pd
 import tensorflow as tf
 import tensorflow_probability as tfp
 from tensorflow import keras
 import tensorflow.keras as tfk
-from tensorflow.keras import Input, layers, Model
+from tensorflow.keras import layers, Model
 from tensorflow.keras import backend as K
 from tensorflow.keras.metrics import mean_squared_error as mse
-from load_data import batch_data, get_validation_data
-from utils import dict_to_str
-from sklearn.metrics import r2_score, mean_squared_error
 from utils import *
 
 

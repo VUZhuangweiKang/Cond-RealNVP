@@ -1,14 +1,11 @@
 import os
 import sys
-from sklearn import cluster
 sys.path.insert(0, '../')
 sys.path.insert(1, '../../')
 
 import tensorflow as tf
 from tensorflow.keras.callbacks import ModelCheckpoint
 import tensorflow_probability as tfp
-import matplotlib.pyplot as plt
-import plotly.graph_objects as go
 from load_data import *
 from utils import *
 from lstm_ae import *

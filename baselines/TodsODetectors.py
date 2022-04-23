@@ -1,5 +1,4 @@
-import os, sys
-import pandas as pd
+import sys
 import numpy as np
 from detecta import detect_cusum
 from pyod.models.knn import KNN
@@ -15,7 +14,7 @@ from tods.sk_interface.detection_algorithm.KDiscordODetector_skinterface import 
 from tods.sk_interface.detection_algorithm.AutoRegODetector_skinterface import AutoRegODetectorSKI
 from tods.sk_interface.detection_algorithm.MatrixProfile_skinterface import MatrixProfileSKI
 
-from keras.layers import Input, Dropout, Dense, LSTM, TimeDistributed, RepeatVector
+from keras.layers import Input, Dense, LSTM, TimeDistributed, RepeatVector
 from keras.models import Model
 from keras import regularizers
 
