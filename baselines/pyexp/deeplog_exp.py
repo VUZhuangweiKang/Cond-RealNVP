@@ -161,47 +161,27 @@ def main(config_, i):
                 epochs=dl_config.epochs, 
                 preprocessing=False,
                 stacked_layers=dl_config.stacked_layers).primitives[-1]._clf
-    # model.fit(X_train)
-    # save_pickle(model, '%s/DeepLog.pkl' % model_dir)
+    model.fit(X_train)
+    save_pickle(model, '%s/DeepLog.pkl' % model_dir)
     model = load_pickle('%s/DeepLog.pkl' % model_dir)
 
     # 1. evaluation on the synthetic dataset
-#     syn_configs = load_json('../../config/syn_config.json')
-#     for syn_config in syn_configs:
-#         save_json(syn_config, '%s/syn_config.json' % log_dir)
-#         os.system('mkdir -p %s/spat_%.2f_slice_%.2f' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac']))
-#         syn_data_dir = '../../syn_data/run%d/spat_%.2f_slice_%.2f/%d' % (i, syn_config['spat_frac'], syn_config['slice_frac'], config.cid)
-#         _, X_test, _, _ = load_inrix_cluster(cid=config.cid, year=config.year, cluster_method=cluster_method, normalizer=None)
-#         syn_X, syn_y, syn_interpret_label = generate_syn_ts(syn_data_dir, syn_config, source=X_test)
+    syn_configs = load_json('../../config/syn_config.json')
+    for syn_config in syn_configs:
+        save_json(syn_config, '%s/syn_config.json' % log_dir)
+        os.system('mkdir -p %s/spat_%.2f_slice_%.2f' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac']))
+        syn_data_dir = '../../syn_data/run%d/spat_%.2f_slice_%.2f/%d' % (i, syn_config['spat_frac'], syn_config['slice_frac'], config.cid)
+        _, X_test, _, _ = load_inrix_cluster(cid=config.cid, year=config.year, cluster_method=cluster_method, normalizer=None)
+        syn_X, syn_y, syn_interpret_label = generate_syn_ts(syn_data_dir, syn_config, source=X_test)
 
-#         if not os.path.exists('%s/spat_%.2f_slice_%.2f/cluster_perf.json' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac'])):
-#             metrics, scores, cluster_labels = tods_cluster_evaluate(syn_X, syn_y, scaler, model.decision_function,
-#                                             save_dir='%s/spat_%.2f_slice_%.2f' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac']))
+        if not os.path.exists('%s/spat_%.2f_slice_%.2f/cluster_perf.json' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac'])):
+            tods_cluster_evaluate(syn_X, syn_y, scaler, model.decision_function, save_dir='%s/spat_%.2f_slice_%.2f' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac']))
             
-#         if syn_config['slice_frac'] == 0.05 and not os.path.exists('%s/spat_%.2f_slice_%.2f/seg_perf.json' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac'])):
-#             results, segment_labels = kde_segment_evaluate(syn_X, syn_interpret_label, config, syn_config, scaler, log_dir)
-#             evaluate(syn_X, syn_interpret_label, segment_labels, log_dir, config, syn_config)
-
-    # 2. evaluation on the accident dataset
-    os.system('mkdir -p %s/alerts' % log_dir)
-    _, y_test = load_alerts(cid=config.cid)
-    X_test.index = pd.to_datetime(X_test.index)
-    y_test.index = pd.to_datetime(y_test.index)
-    X_test = X_test.loc['2019-11-15 00:00:00':'2020-01-01 00:00:00']
-    y_test = y_test.loc['2019-11-15 00:00:00':'2020-01-01 00:00:00']
-    
-    y_test_ = np.reshape((np.sum(y_test, axis=1)>0).values, (-1, 1))
-    print(config.cid, np.sum(y_test_), np.sum(y_test_)/y_test_.shape[0])
-    # metrics, scores, cluster_labels = cluster_evaluate(X_test, y_test_, config, scaler, model.get_score, NF=False, rnn_based=False, save_dir='%s/accidents' % log_dir, best='f1')
-    # print(metrics)
-    # results, segment_labels = kde_accident_evaluate(X_test, y_test, config, scaler, log_dir)
-    # metrics = evaluate(X_test, y_test, segment_labels, log_dir, config, NF=True)
-    # print(results)
-    roc_evaluate(X_test, y_test_, config, scaler, model.decision_function, save_dir=log_dir)
-
+        if syn_config['slice_frac'] == 0.05 and not os.path.exists('%s/spat_%.2f_slice_%.2f/seg_perf.json' % (log_dir, syn_config['spat_frac'], syn_config['slice_frac'])):
+            kde_segment_evaluate(syn_X, syn_interpret_label, config, syn_config, scaler, log_dir)
+            
     
 if __name__ == "__main__":
     for config_ in configs_:
-        # for run in range(2, 6):
-        #     main(config_, run)
-        main(config_, 1)
+        for run in range(1, 6):
+            main(config_, run)
