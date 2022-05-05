@@ -161,7 +161,7 @@ class CondRealNVP(Model):
         self.loss_tracker = tfk.metrics.Mean(name="loss")
         
         if rnn is None:
-            self.rnn = LSTM_ED(n_features=self.n_features, ncoder_hiddens=encoder_units, 
+            self.rnn = LSTM_ED(n_features=self.n_features, encoder_hiddens=encoder_units, 
                                decoder_hiddens=decoder_units, steps=self.steps, cell_type=rnn_cell_type)
         else:
             self.rnn = rnn
