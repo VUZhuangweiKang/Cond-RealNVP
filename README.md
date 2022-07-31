@@ -1,6 +1,6 @@
 # Traffic Anomaly Detection Via Conditional Normalizing Flow
 This repo is created for reproducibility and sharing the codes used for the paper, Traffic Anomaly Detection Via Conditional
-Normalizing Flow, submitted to *The 25th IEEE International Conference on Intelligent Transportation Systems (IEEE ITSC 2022, under review)*.
+Normalizing Flow, submitted to *The 25th IEEE International Conference on Intelligent Transportation Systems (IEEE ITSC 2022)*.
 
 ## File Description
 All code for the paper is in the form of python file and are in the root directory. File descriptions:
@@ -30,3 +30,5 @@ Model:
 
 ## Experimental results shown on submitted paper
 Existing experimental results for individual clusters can be found [here](https://www.dropbox.com/sh/jf82je78ue0g98q/AADFa96whqcuPHS8l9X3JjwGa?dl=0). Please download, uncompress and the place the Inrix folder in `experiments`, then you can visualize the results using the same process.ipynb notebook.
+
+
