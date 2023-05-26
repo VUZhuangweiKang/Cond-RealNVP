@@ -2,6 +2,18 @@
 This repo is created for reproducibility and sharing the codes used for the paper, Traffic Anomaly Detection Via Conditional
 Normalizing Flow, submitted to *The 25th IEEE International Conference on Intelligent Transportation Systems (IEEE ITSC 2022)*.
 
+cite the paper:
+```latex
+@inproceedings{kang2022traffic,
+  title={Traffic Anomaly Detection Via Conditional Normalizing Flow},
+  author={Kang, Zhuangwei and Mukhopadhyay, Ayan and Gokhale, Aniruddha and Wen, Shijie and Dubey, Abhishek},
+  booktitle={2022 IEEE 25th International Conference on Intelligent Transportation Systems (ITSC)},
+  pages={2563--2570},
+  year={2022},
+  organization={IEEE}
+}
+```
+
 ## File Description
 All code for the paper is in the form of python file and are in the root directory. File descriptions:
 
